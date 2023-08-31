@@ -51,20 +51,28 @@ class LinkedList {
         return totalNodes
     }
 
-}
-const capitals = [1, 2];
-    
+    headNode() {
+        return this.head
+    }
+
+    tail() {
+       let current = this.head;
+       while(current.next != null) {
+        current = current.next
+       }
+       return current
+    }
+}    
 
 const linkedList = new LinkedList();
-
 
 linkedList.prepend("test1");
 linkedList.append("test2");
 linkedList.append("test3");
 linkedList.append("test4");
-console.log(linkedList.size())
-console.log(linkedList)
-
+console.log(linkedList.size());
+console.log(linkedList.headNode());
+console.log(linkedList.tail());
 
 </script>
 </html>
