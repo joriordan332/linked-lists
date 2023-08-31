@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+class ListNode {
+    constructor(value) {
+        this.value = value || null
+        this.next = null                
+    }
+}
+
+class LinkedList {
+    constructor(head = null) {
+        this.head = head
+    }
+
+   append(value) {
+    if(this.head === null) this.prepend(value);
+         else {
+            let previous = this.head
+            while (previous.next != null) {
+                previous = previous.next
+            }
+            previous.next = new ListNode(value)
+        }
+   }
+
+   prepend(value) {
+    let previous = null
+    if(this.head != null) previous = this.head;
+    this.head = new ListNode(value);
+    this.head.next = previous;
+   }
+
+}
+
+
+const linkedList = new LinkedList();
+
+
+
+linkedList.append(70);
+linkedList.append(1);
+linkedList.append(0);
+linkedList.append(100);
+console.log(linkedList)
+
+
+
+</script>
+</html>
